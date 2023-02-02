@@ -1,0 +1,6 @@
+CREATE TABLE Branch (Location int(10), ID int(10) NOT NULL AUTO_INCREMENT, name varchar(255), PRIMARY KEY (ID), INDEX (ID));
+CREATE TABLE Manager (id int(10) NOT NULL AUTO_INCREMENT, password varchar(255), username varchar(255) NOT NULL UNIQUE, PRIMARY KEY (id), INDEX (id));
+CREATE TABLE Products (id int(10) NOT NULL AUTO_INCREMENT, name varchar(255), price float, discription varchar(255), Managerid int(10), `Branch ID` int(10) NOT NULL, PRIMARY KEY (id), INDEX (id));
+CREATE TABLE Question (Phone_Number int(10), Name varchar(255), Ask_Question varchar(255), INDEX (Name));
+ALTER TABLE Products ADD CONSTRAINT FKProducts550869 FOREIGN KEY (`Branch ID`) REFERENCES `Branch ` (ID);
+ALTER TABLE Products ADD CONSTRAINT FKProducts901727 FOREIGN KEY (Managerid) REFERENCES Manager (id);
